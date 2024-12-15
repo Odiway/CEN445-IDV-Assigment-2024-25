@@ -1,0 +1,9 @@
+import pandas as pd
+
+# Loading the dataset in google collab
+file_path = '/world-happiness-report-2021.csv'
+data = pd.read_csv(file_path)
+
+# Preview 
+print(data.info())
+print(data.head())

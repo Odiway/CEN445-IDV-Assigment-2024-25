@@ -1,0 +1,19 @@
+import plotly.express as px
+
+# Selecting the relevants of colum and parallel
+columns = ['Ladder score', 'Freedom to make life choices', 'Generosity', 'Perceptions of corruption']
+parallel_data = data[columns]
+parallel_data = parallel_data.rename(columns={
+    'Ladder score': 'Happiness Score',
+    'Freedom to make life choices': 'Freedom',
+    'Perceptions of corruption': 'Corruption'
+})
+
+fig = px.parallel_coordinates(
+    parallel_data,
+    color='Happiness Score',
+    labels={'Happiness Score': 'Happiness Score', 'Freedom': 'Freedom', 'Generosity': 'Generosity', 'Corruption': 'Corruption'},
+    color_continuous_scale=px.colors.diverging.Tealrose,
+    title="How Freedom, Generosity, and Corruption Influence Happiness"
+)
+fig.show()

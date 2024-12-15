@@ -1,0 +1,17 @@
+# top 10
+top_countries = data.nlargest(10, 'Ladder score')
+
+# Plotting
+plt.figure(figsize=(12, 6))
+sns.barplot(
+    data=top_countries.melt(id_vars=['Country name'], 
+                            value_vars=['Logged GDP per capita', 'Social support'], 
+                            var_name='Metric', value_name='Score'),
+    x='Score', y='Country name', hue='Metric', palette='Set2'
+)
+plt.title('Top 10 Happiest Countries: GDP vs Social Support', fontsize=16)
+plt.xlabel('Score')
+plt.ylabel('Country')
+plt.legend(title='Metric')
+plt.grid(axis='x', linestyle='--', alpha=0.7)
+plt.show()

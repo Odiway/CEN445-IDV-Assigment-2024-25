@@ -1,0 +1,8 @@
+plt.figure(figsize=(12, 6))
+sns.violinplot(data=data, x='Regional indicator', y='Ladder score', palette='muted', inner='quartile')
+plt.title('Distribution of Happiness Scores by Region', fontsize=16)
+plt.xticks(rotation=90)
+plt.xlabel('Region')
+plt.ylabel('Happiness Score')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
